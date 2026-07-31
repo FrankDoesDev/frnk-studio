@@ -232,9 +232,9 @@ a { color: inherit; text-decoration: none; }
   padding: 90px 0;
 }
 
-.section.samples { background: var(--surface); }
+.section.projects { background: var(--surface); }
 
-.samples .section-inner {
+.projects .section-inner {
   max-width: 1040px;
 }
 
@@ -264,15 +264,12 @@ a { color: inherit; text-decoration: none; }
   transform: translateY(0);
 }
 
-/* ---------- Mini results strip (bottom of Work Samples) ---------- */
+/* ---------- Mini results strip (inside Rob Chevez's details) ---------- */
 .mini-stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
   text-align: center;
-  margin-top: 64px;
-  padding-top: 40px;
-  border-top: 1px solid var(--border);
 }
 
 .stat {
@@ -319,6 +316,296 @@ a { color: inherit; text-decoration: none; }
   object-fit: cover;
   border: 1px solid var(--border);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Project list ---------- */
+.project-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.project {
+  padding: 48px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.project:first-child { padding-top: 0; }
+.project:last-child { border-bottom: none; padding-bottom: 0; }
+
+.project-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin-bottom: 24px;
+}
+
+.project-title {
+  font-size: 1.4rem;
+}
+
+.project-desc {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.project-media--split {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* Flex items default to min-width:auto, which stops a <video>/<img> from
+   shrinking below its intrinsic size and pushes siblings out of the row. */
+.project-media--split > * {
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .project-media--split { flex-direction: column; }
+}
+
+/* ---------- LoseMyGrip: video + playlist ---------- */
+.project-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  background: #000;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  flex: 1.6;
+}
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 280px;
+  flex-shrink: 0;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.playlist-cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+.track-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.track audio {
+  display: none;
+}
+
+.track-play {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--bg);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.track-play:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+.track-play svg {
+  width: 13px;
+  height: 13px;
+}
+
+.track-play .icon-play { margin-left: 1px; }
+
+/* State is driven by the .is-playing class (not the HTML `hidden` attribute,
+   which some browsers don't apply reliably to inline <svg>). */
+.track-play .icon-pause { display: none; }
+.track-play.is-playing .icon-play { display: none; }
+.track-play.is-playing .icon-pause { display: block; }
+
+.track-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.track-name {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-bar {
+  position: relative;
+  height: 4px;
+  background: var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.track-bar-fill {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: var(--ink);
+  border-radius: 999px;
+}
+
+.track-time {
+  font-size: 0.72rem;
+  color: var(--ink-soft);
+  flex-shrink: 0;
+  min-width: 32px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 700px) {
+  .playlist { max-width: none; }
+}
+
+/* ---------- TDL: screenshots + download ---------- */
+.screens {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1.6;
+  width: 100%;
+}
+
+.screen-img {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.download-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  max-width: 260px;
+  flex-shrink: 0;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.download-icon svg {
+  width: 28px;
+  height: 28px;
+  color: var(--ink-soft);
+}
+
+.download-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin: 4px 0 0;
+}
+
+.download-size {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.btn-download {
+  margin-top: 10px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.btn-download:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+  .download-card { max-width: none; }
+}
+
+/* ---------- Project details toggle ---------- */
+.project-details {
+  margin-top: 28px;
+}
+
+.project-details summary {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-soft);
+  list-style: none;
+  transition: color 0.2s ease;
+}
+
+.project-details summary::-webkit-details-marker { display: none; }
+
+.project-details summary:hover { color: var(--ink); }
+
+.project-details summary::before {
+  content: '+';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.project-details[open] summary::before { content: '\2212'; }
+
+.details-content {
+  margin-top: 20px;
+}
+
+.project-note {
+  color: var(--ink-soft);
+  font-size: 0.92rem;
 }
 
 /* ---------- Footer ---------- */

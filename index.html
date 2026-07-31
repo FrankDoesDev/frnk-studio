@@ -50,59 +50,190 @@
     </div>
   </div>
 
-  <a href="#samples" class="scroll-cue" aria-label="Scroll to content">
+  <a href="#projects" class="scroll-cue" aria-label="Scroll to content">
     <span class="scroll-label">Projects</span>
     <span class="scroll-arrow">↓</span>
   </a>
 </section>
 
-<!-- ============ WORK SAMPLES + RESULTS ============ -->
-<section class="section samples" id="samples">
+<!-- ============ PROJECTS ============ -->
+<section class="section projects" id="projects">
   <div class="section-inner">
     <div class="section-head">
       <h2>Projects</h2>
-      <p class="section-sub">Pieces from recent client work. More available on request.</p>
+      <p class="section-sub">A mix of client work and personal projects.</p>
     </div>
 
-    <div class="sample-grid">
-      <!-- TO ADD/SWAP A VIDEO: drop the .mp4 in assets/ and update the src +
-           poster below. Poster images are just a still frame shown before play. -->
-      <div class="sample-card">
-        <video class="sample-video" controls playsinline preload="metadata" poster="assets/reel1-poster.jpg">
-          <source src="assets/ClientVideo1.mp4" type="video/mp4">
-        </video>
-      </div>
+    <div class="project-list">
 
-      <div class="sample-card">
-        <video class="sample-video" controls playsinline preload="metadata" poster="assets/reel2-poster.jpg">
-          <source src="assets/ClientVideo2.mp4" type="video/mp4">
-        </video>
-      </div>
+      <!-- ---- Project: Rob Chevez (client work) ---- -->
+      <article class="project">
+        <div class="project-header">
+          <h3 class="project-title">Rob Chevez</h3>
+          <p class="project-desc">Social Media Content | Personal Brand</p>
+        </div>
 
-      <div class="sample-card">
-        <video class="sample-video" controls playsinline preload="metadata" poster="assets/reel3-poster.jpg">
-          <source src="assets/ClientVideo3.mp4" type="video/mp4">
-        </video>
-      </div>
-    </div>
+        <div class="project-media">
+          <!-- TO ADD/SWAP A VIDEO: drop the .mp4 in assets/ and update the src +
+               poster below. Poster images are just a still frame shown before play. -->
+          <div class="sample-grid">
+            <div class="sample-card">
+              <video class="sample-video" controls playsinline preload="metadata" poster="assets/reel1-poster.jpg">
+                <source src="assets/ClientVideo1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="sample-card">
+              <video class="sample-video" controls playsinline preload="metadata" poster="assets/reel2-poster.jpg">
+                <source src="assets/ClientVideo2.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="sample-card">
+              <video class="sample-video" controls playsinline preload="metadata" poster="assets/reel3-poster.jpg">
+                <source src="assets/ClientVideo3.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
 
-    <div class="mini-stats">
-      <div class="stat">
-        <span class="stat-number" data-count="60" data-suffix="%">0%</span>
-        <span class="stat-label">Instagram reach growth, month-over-month</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number" data-count="102" data-suffix="%">0%</span>
-        <span class="stat-label">Cumulative Instagram growth per quarter</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number" data-count="30" data-suffix="%">0%</span>
-        <span class="stat-label">More YouTube viewership, month-over-month</span>
-      </div>
-      <div class="stat">
-        <span class="stat-number" data-count="2000" data-suffix="%+">0%+</span>
-        <span class="stat-label">View increase after reviving a dormant TikTok account</span>
-      </div>
+        <details class="project-details">
+          <summary>See the numbers</summary>
+          <div class="details-content">
+            <div class="mini-stats">
+              <div class="stat">
+                <span class="stat-number" data-count="60" data-suffix="%">0%</span>
+                <span class="stat-label">Instagram reach growth, month-over-month</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-count="102" data-suffix="%">0%</span>
+                <span class="stat-label">Cumulative Instagram growth per quarter</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-count="30" data-suffix="%">0%</span>
+                <span class="stat-label">More YouTube viewership, month-over-month</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number" data-count="2000" data-suffix="%+">0%+</span>
+                <span class="stat-label">View increase after reviving a dormant TikTok account</span>
+              </div>
+            </div>
+          </div>
+        </details>
+      </article>
+
+      <!-- ---- Project: LoseMyGrip (personal music project) ---- -->
+      <article class="project">
+        <div class="project-header">
+          <h3 class="project-title">LoseMyGrip</h3>
+          <p class="project-desc">Personal Music Project</p>
+        </div>
+
+        <div class="project-media project-media--split">
+          <video class="project-video" controls playsinline preload="metadata" poster="assets/losemygrip-video-poster.jpg">
+            <source src="assets/losemygrip-video.mp4" type="video/mp4">
+          </video>
+
+          <div class="playlist">
+            <img class="playlist-cover" src="assets/losemygrip-cover.jpg" alt="LoseMyGrip cover art">
+
+            <!-- TO ADD/RENAME TRACKS: update the track-name text and the <source src> below.
+                 script.js turns each .track into a custom play/progress/time player automatically. -->
+            <div class="track-list">
+              <div class="track">
+                <button class="track-play" type="button" aria-label="Play ERASED">
+                  <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+                </button>
+                <div class="track-info">
+                  <span class="track-name">ERASED</span>
+                  <div class="track-bar"><div class="track-bar-fill"></div></div>
+                </div>
+                <span class="track-time">0:00</span>
+                <audio preload="metadata">
+                  <source src="assets/ERASED.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+              <div class="track">
+                <button class="track-play" type="button" aria-label="Play SPOTLESS">
+                  <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+                </button>
+                <div class="track-info">
+                  <span class="track-name">SPOTLESS</span>
+                  <div class="track-bar"><div class="track-bar-fill"></div></div>
+                </div>
+                <span class="track-time">0:00</span>
+                <audio preload="metadata">
+                  <source src="assets/SPOTLESS.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+              <div class="track">
+                <button class="track-play" type="button" aria-label="Play THROUGH MY TEETH">
+                  <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                  <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+                </button>
+                <div class="track-info">
+                  <span class="track-name">THROUGH MY TEETH</span>
+                  <div class="track-bar"><div class="track-bar-fill"></div></div>
+                </div>
+                <span class="track-time">0:00</span>
+                <audio preload="metadata">
+                  <source src="assets/TMT-MASTER1.mp3" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <details class="project-details">
+          <summary>More details</summary>
+          <div class="details-content">
+            <p class="project-note">LoseMyGrip is the home for my self-produced tracks—a mix of heavy alternative hip-hop beats, distorted bass, and sharp, unfiltered hooks. I write, record, and mix everything in my own room, combining abrasive synths with direct, storytelling lyrics about late nights and dead ends.</p>
+          </div>
+        </details>
+      </article>
+
+      <!-- ---- Project: TDL (desktop to-do app) ---- -->
+      <article class="project">
+        <div class="project-header">
+          <h3 class="project-title">TDL</h3>
+          <p class="project-desc">Personal To-Do-List For Your Desktop</p>
+        </div>
+
+        <div class="project-media project-media--split">
+          <!-- TO ADD MORE SCREENSHOTS: copy this img line, point src at the new file -->
+          <div class="screens">
+            <img class="screen-img" src="assets/tdl-screenshot.png" alt="TDL screenshot">
+          </div>
+
+          <div class="download-card">
+            <div class="download-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 21h16"/></svg>
+            </div>
+            <p class="download-name">TDL_0.1.0_x64_en-US.msi</p>
+            <p class="download-size">8.5 MB</p>
+            <a href="assets/TDL_0.1.0_x64_en-US.msi" download class="btn-download">Download</a>
+          </div>
+        </div>
+
+        <details class="project-details">
+          <summary>More details</summary>
+          <div class="details-content">
+            <p class="project-note">TDL is a lightweight desktop to-do list app built for tracking daily tasks over time, not just a flat checklist.<br><br>
+			It offers four ways to look at your work:<br>
+			<b>Day View:</b> for managing today's tasks one at a time.<br>
+			<b>Week View:</b> laid out as columns you can drag tasks between.<br>
+			<b>Month View:</b> with an at-a-glance calendar showing how complete each day was.<br>
+			<b>Year View:</b> that renders the whole year as a grid of days shaded by completion, similar to a habit-tracking heatmap.<br><br>
+
+Tasks can be one-off or set to repeat daily, weekly, monthly, or yearly, and the app keeps a running streak counter for consecutive fully-completed days<br><br>
+Everyday conveniences are built in throughout: drag-and-drop or keyboard reordering, undo and redo for any change, bulk actions like clearing completed tasks or marking a whole day done, and full export/import of your data as a JSON backup. <br>It also supports light and dark themes.
+<br><br>
+TDL runs as a native Windows desktop app (built with Tauri) and stores all data locally on your machine — nothing is sent to a server. It's a personal project by Frank Zito, built to be a fast, no-frills alternative to bulkier task-management software.
+</p>
+          </div>
+        </details>
+      </article>
+
     </div>
   </div>
 </section>
